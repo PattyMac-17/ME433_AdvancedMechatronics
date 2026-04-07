@@ -15,6 +15,7 @@ void setServoAngle(float angle){
 }
 int main()
 {
+    stdio_init_all();
     gpio_set_function(servoPin, GPIO_FUNC_PWM);
     uint slice = pwm_gpio_to_slice_num(servoPin);
     pwm_config config = pwm_get_default_config();
