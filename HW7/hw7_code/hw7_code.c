@@ -72,6 +72,36 @@ int main()
         cs_deselect(cs_pin);
 
         //update this shit at 10x the desired frequency (5x multiple of nyquist) - nick actually wants 50 updates/second
+
+        //hw8
+
+        keep same spi pins but add a second cs pin for RAM
+
+        keep select and deselect cs stuff
+
+        write a ram init fxn (get it into sequential mode)
+
+        need a ram read and a ram write (16 bit address, array of 8 bit #s [2], the int u need)
+
+        update dac from ram (with an address to pull a voltage from ram)
+
+        //standard pin init = 3 lines
+
+        write to ram before while loo[p
+        
+        while:
+        update dac from ram
+        sleep_ms(1)
+
+        init:
+        2 byte array
+        0b00000001
+        0b01000000
+        cs select
+        write
+        cs select
+
+        oh wait this is all in the zoom recording
     }
     
     */
