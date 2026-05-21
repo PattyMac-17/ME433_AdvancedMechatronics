@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(foreach \\($f in @\\(\"sigA.csv\",\"sigB.csv\",\"sigC.csv\",\"sigD.csv\"\\)\\) { $p = \"c:\\\\Users\\\\PatrickMcLean\\\\Documents\\\\GitHub\\\\ME433_AdvancedMechatronics\\\\HW9\\\\$f\"; $first = Get-Content $p -TotalCount 1; $last = Get-Content $p -Tail 1; Write-Output \"$f : first=$first  last=$last\" })"
+    ]
+  }
+}
