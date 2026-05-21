@@ -1,10 +1,13 @@
 import csv
+import os
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Load sigA.csv (located one directory up) into testT and testS.
+# Load sigA.csv (resolved relative to this script -> ../Datasets/sigA.csv).
+_here = os.path.dirname(os.path.abspath(__file__))
+_csv_path = os.path.join(_here, "..", "Datasets", "sigA.csv")
 testT, testS = [], []
-with open("sigA.csv") as _f:
+with open(_csv_path) as _f:
     for _row in csv.reader(_f):
         testT.append(float(_row[0]))
         testS.append(float(_row[1]))

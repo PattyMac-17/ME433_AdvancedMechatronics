@@ -51,10 +51,11 @@ def plot_signal_and_fft(name, t, y, out_path):
 
 if __name__ == '__main__':
     here = os.path.dirname(os.path.abspath(__file__))
-    out_dir = os.path.join(here, 'hw9_q4')
+    repo_root = os.path.dirname(here)
+    out_dir = os.path.join(repo_root, 'Output Images', 'hw9_q4')
     os.makedirs(out_dir, exist_ok=True)
     for name in ('sigA', 'sigB', 'sigC', 'sigD'):
-        csv_path = os.path.join(here, name + '.csv')
+        csv_path = os.path.join(repo_root, 'Datasets', name + '.csv')
         out_path = os.path.join(out_dir, 'hw9_q4_{}_time_fft.png'.format(name))
         t, y = load_csv(csv_path)
         Fs = plot_signal_and_fft(name, t, y, out_path)

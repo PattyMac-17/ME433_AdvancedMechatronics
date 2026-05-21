@@ -121,14 +121,15 @@ def plot_candidates_time(t, x, windows, name, out_path):
 # ----------------------------------------------------------------------
 if __name__ == "__main__":
     here = os.path.dirname(os.path.abspath(__file__))
-    out_dir = os.path.join(here, "hw9_q5")
-    cand_dir = os.path.join(here, "candidates")
+    repo_root = os.path.dirname(here)
+    out_dir = os.path.join(repo_root, "Output Images", "hw9_q5")
+    cand_dir = os.path.join(repo_root, "Output Images", "unused candidates")
     os.makedirs(out_dir, exist_ok=True)
     os.makedirs(cand_dir, exist_ok=True)
     summary = []
 
     for name in ("sigA", "sigB", "sigC", "sigD"):
-        csv_path = os.path.join(here, name + ".csv")
+        csv_path = os.path.join(repo_root, "Datasets", name + ".csv")
         t, x = load_csv(csv_path)
         Fs = sample_rate(t)
 

@@ -1890,7 +1890,7 @@ SIGD_WEIGHTS = np.array(
         0.000000000000000000,
     ]
 )
-SIGD_INFO = "low-pass sinc, Fs = 400 Hz, cutoff = 400 Hz, transition bandwidth = 400 Hz, window = Blackman"
+SIGD_INFO = "low-pass sinc, Fs = 400 Hz, cutoff = 4 Hz, transition bandwidth = 4 Hz, window = Blackman"
 
 # -------------------- assemble per-signal lookup --------------------
 FIR_WEIGHTS = {
@@ -2014,12 +2014,13 @@ def plot_fft_compare(Fs, x, y, title, out_path):
 # ----------------------------------------------------------------------
 if __name__ == "__main__":
     here = os.path.dirname(os.path.abspath(__file__))
-    out_dir = os.path.join(here, "hw9_q7")
+    repo_root = os.path.dirname(here)
+    out_dir = os.path.join(repo_root, "Output Images", "hw9_q7")
     os.makedirs(out_dir, exist_ok=True)
     summary = []
 
     for name in ("sigA", "sigB", "sigC", "sigD"):
-        csv_path = os.path.join(here, name + ".csv")
+        csv_path = os.path.join(repo_root, "Datasets", name + ".csv")
         t, x = load_csv(csv_path)
         Fs = sample_rate(t)
 
