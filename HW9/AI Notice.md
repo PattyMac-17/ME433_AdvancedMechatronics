@@ -1,0 +1,1 @@
+Note that Claude Code CLI was used to produce these scripts. I'm trying to learn the agentic coding workflow and this python assignment seemed like a great opportunity to do so. If you need me to redo the assignment without agentic AI, please let me know
