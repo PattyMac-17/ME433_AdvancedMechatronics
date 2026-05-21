@@ -163,7 +163,7 @@ if __name__ == '__main__':
         title_time = '{} FIR ({}) -- N = {}, {} (Fs = {:.1f} Hz)'.format(name, tag, N, info, Fs)
         title_fft = '{} FIR FFT ({}) -- N = {}, {} (Fs = {:.1f} Hz)'.format(name, tag, N, info, Fs)
 
-        final_path = os.path.join(out_dir, 'hw9_q7_{}_fir_final.png'.format(name))
+        final_path = os.path.join(out_dir, 'hw9_q7_{}_fir.png'.format(name))
         plot_time_compare(t, x, y, title_time, final_path)
 
         fft_path = os.path.join(out_dir, 'hw9_q7_{}_fir_fft.png'.format(name))

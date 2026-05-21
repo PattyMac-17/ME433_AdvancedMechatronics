@@ -124,7 +124,9 @@ def plot_candidates_time(t, x, ab_list, name, out_path):
 if __name__ == '__main__':
     here = os.path.dirname(os.path.abspath(__file__))
     out_dir = os.path.join(here, 'hw9_q6')
+    cand_dir = os.path.join(here, 'candidates')
     os.makedirs(out_dir, exist_ok=True)
+    os.makedirs(cand_dir, exist_ok=True)
     summary = []
 
     for name in ('sigA', 'sigB', 'sigC', 'sigD'):
@@ -132,13 +134,13 @@ if __name__ == '__main__':
         t, x = load_csv(csv_path)
         Fs = sample_rate(t)
 
-        cand_path = os.path.join(out_dir, 'hw9_q6_{}_iir_candidates.png'.format(name))
+        cand_path = os.path.join(cand_dir, 'hw9_q6_{}_iir_candidates.png'.format(name))
         plot_candidates_time(t, x, CANDIDATE_AB, name, cand_path)
 
         A, B = BEST_IIR_WEIGHTS[name]
         y = iir_lowpass(x, A, B)
 
-        final_path = os.path.join(out_dir, 'hw9_q6_{}_iir_final.png'.format(name))
+        final_path = os.path.join(out_dir, 'hw9_q6_{}_iir.png'.format(name))
         plot_time_compare(
             t, x, y,
             '{} IIR -- A = {}, B = {} (Fs = {:.1f} Hz)'.format(name, A, B, Fs),
