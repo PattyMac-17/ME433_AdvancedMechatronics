@@ -26,9 +26,12 @@
 void ssd1306_setup(void);
 void ssd1306_update(void);
 void ssd1306_clear(void);
+void ssd1306_drawDoubleVector(float x, float y);
 void ssd1306_drawPixel(unsigned char x, unsigned char y, unsigned char color);
 void ssd1306_drawChar(unsigned char x, unsigned char y,  char letter);
 void ssd1306_drawMessage(unsigned char x, unsigned char y, char *message);
+void ssd1306_drawSingleVector(float x, float y);
+void ssd1306_drawLine(int x0, int y0, int x1, int y1);
 
 /// this should be private
 void ssd1306_command(unsigned char c);

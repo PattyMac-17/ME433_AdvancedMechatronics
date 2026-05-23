@@ -28,8 +28,8 @@ void mpu6050_read(unsigned char reg, uint8_t* destination, int numReads) {
 
 void mpu6050_convert(int16_t* rawValues, float* cleanValues){
     //convert acceleration to g
-    cleanValues[0] = (float)rawValues[0] * 0.000061; //x acc
-    cleanValues[1] = (float)rawValues[1] * 0.000061; //y acc
+    cleanValues[0] = (float)rawValues[0] * 0.000061 * -1; //x acc
+    cleanValues[1] = (float)rawValues[1] * 0.000061 * -1; //y acc
     cleanValues[2] = (float)rawValues[2] * 0.000061; //z acc
 
     //convert temp to kelvin

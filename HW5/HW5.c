@@ -34,11 +34,11 @@ int main()
     gpio_pull_up(I2C_SDA);
     gpio_pull_up(I2C_SCL);
 
-    sleep_ms(5000); // time to open terminal: screen /dev/tty.usbmodem101 115200
+    //sleep_ms(5000); // time to open terminal: screen /dev/tty.usbmodem101 115200
 
     printf("hi!\n");
 
-    sleep_ms(1000);
+    //sleep_ms(1000);
     
     printf("trying to initialize ssd1306\n");
     ssd1306_setup();
@@ -55,7 +55,7 @@ int main()
     uint8_t identifier = mpu6050_whoami();
     printf("my name is 0x%02X\n", identifier);
 
-    sleep_ms(1000);
+    //sleep_ms(1000);
 
     printf("entering while loop\n");
 
@@ -76,10 +76,21 @@ int main()
         sprintf(message3, "Z acc = %.3f g", measurements[2]);
 
         ssd1306_clear();
-
+        /*
         ssd1306_drawMessage(0, 0, message1);
         ssd1306_drawMessage(0, 8, message2);
         ssd1306_drawMessage(0, 16, message3);
+        ssd1306_drawPixel(0,0,1);
+        ssd1306_drawPixel(127,0,1);
+        ssd1306_drawPixel(0,31,1);
+        ssd1306_drawPixel(127,31,1);
+
+        //center
+        ssd1306_drawPixel(63,15,1);
+        ssd1306_drawPixel(63,16,1);
+        ssd1306_drawPixel(64,15,1);
+        ssd1306_drawPixel(64,16,1);*/
+        ssd1306_drawSingleVector(measurements[0], measurements[1]);
 
         ssd1306_update();
 
