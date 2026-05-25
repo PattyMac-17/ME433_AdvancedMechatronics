@@ -23,7 +23,7 @@ int main()
         printf("%d\n", i);
         sleep_ms(1000);
     }
-    printf("Entering loop...")
+    printf("Entering loop...");
     /*
     int32_t rawData[NUM_SAMPLES];
     int32_t filteredData[NUM_SAMPLES];
