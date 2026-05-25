@@ -41,8 +41,8 @@ void hx711_IIR(int32_t* raw, int32_t* filtered, int numSamples) {
         return;
     }
 
-    float A = 0.8f;
-    float B = 0.2f;
+    float A = 0.95f;
+    float B = 0.05f;
 
     filtered[0] = raw[0];
 
