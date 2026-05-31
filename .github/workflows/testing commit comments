@@ -1,0 +1,11 @@
+name: Comment Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print comment text
+        run: echo "This is the new comment text"
